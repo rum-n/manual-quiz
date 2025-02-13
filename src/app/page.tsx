@@ -7,13 +7,13 @@ import quizData from '@/data/quiz.json';
 import styled from 'styled-components';
 import ManualLogo from '@/components/Icons/ManualLogo';
 
-export const LandingContainer = styled.div`
+const LandingContainer = styled.div`
   display: flex;
   flex-direction: column;
   min-height: 100vh;
 `;
 
-export const Hero = styled.section`
+const Hero = styled.section`
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -27,20 +27,20 @@ export const Hero = styled.section`
   padding: 0 138px;
 `;
 
-export const LogoWrapper = styled.div`
+const LogoWrapper = styled.div`
   position: absolute;
   top: 30px;
   left: 138px;
 `;
 
-export const HeroTitle = styled.h1`
+const HeroTitle = styled.h1`
   font-size: 3.5rem;
   margin-bottom: 1.5rem;
   color: #0B3B3C;
   max-width: 800px;
 `;
 
-export const TitleWrapper = styled.div`
+const TitleWrapper = styled.div`
   display: flex;
   flex-direction: column;
   align-items: flex-start;
@@ -48,14 +48,14 @@ export const TitleWrapper = styled.div`
   width: 468px;
 `;
 
-export const HeroSubtitle = styled.p`
+const HeroSubtitle = styled.p`
   font-size: 1.25rem;
   margin-bottom: 2rem;
   color: #666;
   max-width: 600px;
 `;
 
-export const StartButton = styled.button`
+const StartButton = styled.button`
   padding: 1rem 2.5rem;
   font-size: 1rem;
   background: #7E0707;
@@ -70,11 +70,12 @@ export const StartButton = styled.button`
   }
 `;
 
-export const InfoSection = styled.section`
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 4rem;
-  padding: 6rem 4rem;
+const InfoSection = styled.section`
+  display: flex;
+  gap: 120px;
+  padding: 90px 337px 90px 238px;
+  background: white;
+  position: relative;
   
   @media (max-width: 768px) {
     grid-template-columns: 1fr;
@@ -82,19 +83,61 @@ export const InfoSection = styled.section`
   }
 `;
 
-export const InfoContent = styled.div`
+const InfoSectionTitle = styled.h2`
+  font-size: 2.5rem;
+  margin-bottom: 2rem;
+  color: #0B3B3C;
+  text-align: center;
+  margin-top: 70px;
+  margin-bottom: -20px;
+  z-index: 2;
+`;
+
+const InfoContent = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: center;
-  order: 1;
+  position: relative;
+  z-index: 1;
 
   @media (max-width: 768px) {
     order: 1;
   }
 `;
 
-export const InfoImage = styled.div`
-  order: 2;
+const InfoContentTopic = styled.p`
+  font-size: 1.25rem;
+  margin-bottom: 2rem;
+  color: #0B3B3C;
+`;
+
+const InfoContentTitle = styled.h3`
+  font-size: 1.25rem;
+  margin-bottom: 2rem;
+  color: #0B3B3C;
+`;
+
+const InfoContentDescription = styled.p`
+  font-size: 1.25rem;
+  margin-bottom: 2rem;
+  color: #0B3B3C;
+`;
+
+const BackgroundNumber = styled.span<{ position: 'left' | 'right' }>`
+  position: absolute;
+  font-size: 450px;
+  font-weight: 700;
+  color: #F4F7F5;
+  z-index: 0;
+  ${props => props.position === 'left'
+    ? 'margin-left: 280px;'
+    : 'margin-right: 280px;'
+  }
+`;
+
+const InfoImage = styled.div`
+  position: relative;
+  z-index: 1;
   
   img {
     width: 370px;
@@ -106,13 +149,12 @@ export const InfoImage = styled.div`
   }
 `;
 
-export const Footer = styled.footer`
-  background: #0B3B3C;
-  color: white;
+const Footer = styled.footer`
+  background: #E8EFE9;
   padding: 4rem;
 `;
 
-export const FooterGrid = styled.div`
+const FooterGrid = styled.div`
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   gap: 2rem;
@@ -128,7 +170,7 @@ export const FooterGrid = styled.div`
   }
 `;
 
-export const FooterColumn = styled.div`
+const FooterColumn = styled.div`
   h3 {
     font-size: 1.25rem;
     margin-bottom: 1.5rem;
@@ -144,7 +186,6 @@ export const FooterColumn = styled.div`
   }
 
   a {
-    color: white;
     text-decoration: none;
     
     &:hover {
@@ -169,7 +210,7 @@ export default function Home() {
             <TitleWrapper>
               <HeroTitle>Be good to yourself</HeroTitle>
               <HeroSubtitle>
-                We’re working around the clock to bring you a holistic approach to your wellness. From top to bottom, inside and out.
+                We're working around the clock to bring you a holistic approach to your wellness. From top to bottom, inside and out.
               </HeroSubtitle>
               <StartButton onClick={() => setShowQuiz(true)}>
                 Take the Quiz
@@ -177,7 +218,11 @@ export default function Home() {
             </TitleWrapper>
           </Hero>
 
+          <InfoSectionTitle>
+            What we can help with
+          </InfoSectionTitle>
           <InfoSection>
+            <BackgroundNumber position="left">01</BackgroundNumber>
             <InfoImage>
               <Image
                 src="/first-fold-image.png"
@@ -188,15 +233,18 @@ export default function Home() {
               />
             </InfoImage>
             <InfoContent>
-              <h2>Personalized Treatment Plans</h2>
-              <p>Our expert-designed quiz helps determine the most effective treatment for your specific type of hair loss.</p>
+              <InfoContentTopic>Hair loss</InfoContentTopic>
+              <InfoContentTitle>Hair loss needn't be irreversible. We can help! </InfoContentTitle>
+              <InfoContentDescription>We're working around the clock to bring you a holistic approach to your wellness. From top to bottom, inside and out.</InfoContentDescription>
             </InfoContent>
           </InfoSection>
 
           <InfoSection>
+            <BackgroundNumber position="right">02</BackgroundNumber>
             <InfoContent>
-              <h2>Backed by Science</h2>
-              <p>All our treatments are clinically proven and recommended by leading dermatologists.</p>
+              <InfoContentTopic>Erectile dysfunction</InfoContentTopic>
+              <InfoContentTitle>Erections can be a tricky thing. But no need to feel down!</InfoContentTitle>
+              <InfoContentDescription>We're working around the clock to bring you a holistic approach to your wellness. From top to bottom, inside and out.</InfoContentDescription>
             </InfoContent>
             <InfoImage>
               <Image
