@@ -9,7 +9,6 @@ import ManualLogo from '@/components/Icons/ManualLogo';
 import TwitterIcon from '@/components/Icons/TwitterIcon';
 import GoogleIcon from '@/components/Icons/GoogleIcon';
 import FacebookIcon from '@/components/Icons/FacebookIcon';
-import { TTNorms } from './fonts';
 
 const LandingContainer = styled.div`
   display: flex;
@@ -363,7 +362,7 @@ export default function Home() {
             <TitleWrapper>
               <HeroTitle>Be good to yourself</HeroTitle>
               <HeroSubtitle>
-                We're working around the clock to bring you a holistic approach to your wellness. From top to bottom, inside and out.
+                We&apos;re working around the clock to bring you a holistic approach to your wellness. From top to bottom, inside and out.
               </HeroSubtitle>
               <StartButton onClick={() => setShowQuiz(true)}>
                 Take the Quiz
@@ -387,8 +386,8 @@ export default function Home() {
             </InfoImage>
             <InfoContent>
               <InfoContentTopic>Hair loss</InfoContentTopic>
-              <InfoContentTitle>Hair loss needn't be irreversible. We can help! </InfoContentTitle>
-              <InfoContentDescription>We're working around the clock to bring you a holistic approach to your wellness. From top to bottom, inside and out.</InfoContentDescription>
+              <InfoContentTitle>Hair loss needn&apos;t be irreversible. We can help! </InfoContentTitle>
+              <InfoContentDescription>We&apos;re working around the clock to bring you a holistic approach to your wellness. From top to bottom, inside and out.</InfoContentDescription>
             </InfoContent>
           </InfoSection>
 
@@ -397,7 +396,7 @@ export default function Home() {
             <InfoContent>
               <InfoContentTopic>Erectile dysfunction</InfoContentTopic>
               <InfoContentTitle>Erections can be a tricky thing. But no need to feel down!</InfoContentTitle>
-              <InfoContentDescription>We're working around the clock to bring you a holistic approach to your wellness. From top to bottom, inside and out.</InfoContentDescription>
+              <InfoContentDescription>We&apos;re working around the clock to bring you a holistic approach to your wellness. From top to bottom, inside and out.</InfoContentDescription>
             </InfoContent>
             <InfoImage>
               <Image
