@@ -8,10 +8,10 @@ const ResultsContainer = styled.div`
   text-align: center;
 `;
 
-const Title = styled.h2<{ isRejected: boolean }>`
+const Title = styled.h2<{ $isRejected: boolean }>`
   font-size: 2rem;
   margin-bottom: 1.5rem;
-  color: ${props => props.isRejected ? '#7E0707' : '#0B3B3C'};
+  color: ${props => props.$isRejected ? '#7E0707' : '#0B3B3C'};
 `;
 
 const Message = styled.p`
@@ -45,12 +45,12 @@ export default function Results({
 }: ResultsProps) {
 
   const handleContinue = () => {
-    window.location.href = 'https://www.manual.co';
+    window.location.assign('https://www.manual.co');
   };
 
   return (
     <ResultsContainer>
-      <Title isRejected={isRejected}>
+      <Title $isRejected={isRejected}>
         {isRejected
           ? "Important Notice"
           : "Great news!"
